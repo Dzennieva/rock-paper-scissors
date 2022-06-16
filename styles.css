@@ -1,0 +1,17 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    background-color: aqua;
+}
+.container {
+    width: 800px;
+    max-width: 100%;
+    min-height: 400px;
+    margin: 0 auto;
+    /* border:1px solid red; */
+    padding: 3rem;
+   
+}
