@@ -1,10 +1,11 @@
-const choices = ["rock", "paper", "scissors"];
-let playerScore = 0,
-    compScore = 0;
+
+let playerScore = 0;
+let compScore = 0;
 
 // Computer's Choice
 function computerPlay () {
-    let computerchoice = choices[Math.floor(Math.random()* choices.length)];
+    
+    let computerchoice = choices[Math.floor(Math.random() * choices.length)];
     return computerchoice;
 }
 
@@ -12,15 +13,16 @@ function computerPlay () {
 function playRound (playerSelection, computerSelection) {
     
     if (playerSelection === computerSelection) {
-        return "It's a Tie!";
+        compScore++;
+        return "It's a Tie! You both picked " + playerSelection;
     }else if (playerSelection === "rock" && computerSelection === 'paper') {
-        compScore++
+        compScore++;
         return "You Lose! Paper covers rock."
     }else if (playerSelection === "scissors" && computerSelection === 'rock') {
-        compScore++
+        compScore++;
         return "You Lose! Rock crushes Scissors."
     }else if (playerSelection === "paper" && computerSelection === 'scissors') {
-        compScore++
+        compScore++;
         return "You Lose! Scissors cuts Paper."
     }else {
         playerScore++;
@@ -28,28 +30,46 @@ function playRound (playerSelection, computerSelection) {
     }
  }
  
-let playerSelection;
-let computerSelection;
-
 // plays a 5 round game 
 const game = () => {
-    for(let i = 0; i<5; i++) {
-        playerSelection = prompt("Rock, Paper, Scissors?");
+    for(let i = 0; i < 5; i++) {
+       let playerSelection = prompt("Rock, Paper, Scissors?");
 
         while (playerSelection === null) {
             return;
         }
+        
         playerSelection = playerSelection.toLowerCase();
-        computerSelection = computerPlay();
-        console.log("You chose: " + playerSelection);
-        console.log("Computer chose: " + computerSelection);
-        console.log(playRound(playerSelection, computerSelection));
+        
+        const computerSelection = computerPlay();
+
+        alert("You chose: " + playerSelection);
+
+        alert("Computer chose: " + computerSelection);
+
+        alert(playRound(playerSelection, computerSelection));
     }
-}
+   alert(gameScore());
+};
 
 game();
 
-function validatePlayerInput(choice) {
-    return (choices.includes(choice))
+
+function gameScore () {
+    if (playerScore > compScore) {
+        return "You beat the computer! Way to go!"
+    }else if (playerScore < compScore) {
+        return "You got beat by the computer! Try again!"
+    }else {
+       return "You tied with the computer. Not bad!"
+    }
 }
+
+// function validatePlayerInput(choice) {
+//     if (choices.includes(choice)) {
+//         return true;
+//     }else {
+//         return false;
+//     }
+// }
 
