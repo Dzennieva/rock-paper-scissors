@@ -1,4 +1,4 @@
-
+const choices = ["rock", "paper", "scissors"];
 let playerScore = 0;
 let compScore = 0;
 
@@ -8,6 +8,9 @@ function computerPlay () {
     let computerchoice = choices[Math.floor(Math.random() * choices.length)];
     return computerchoice;
 }
+function openGame() {
+    game();
+ }
 
 // plays a single round of Rock Paper Scissors.
 function playRound (playerSelection, computerSelection) {
@@ -29,7 +32,7 @@ function playRound (playerSelection, computerSelection) {
         return "You win!"
     }
  }
- 
+
 // plays a 5 round game 
 const game = () => {
     for(let i = 0; i < 5; i++) {
@@ -53,7 +56,6 @@ const game = () => {
 };
 
 game();
-
 
 function gameScore () {
     if (playerScore > compScore) {
