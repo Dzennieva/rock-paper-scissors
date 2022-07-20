@@ -2,15 +2,17 @@ const choices = ["rock", "paper", "scissors"];
 let playerScore = 0;
 let compScore = 0;
 
+// play game
+function openGame() {
+    game();
+ }
+
 // Computer's Choice
 function computerPlay () {
     
     let computerchoice = choices[Math.floor(Math.random() * choices.length)];
     return computerchoice;
 }
-function openGame() {
-    game();
- }
 
 // plays a single round of Rock Paper Scissors.
 function playRound (playerSelection, computerSelection) {
@@ -43,7 +45,9 @@ const game = () => {
         }
         
         playerSelection = playerSelection.toLowerCase();
+
         
+
         const computerSelection = computerPlay();
 
         alert("You chose: " + playerSelection);
@@ -51,6 +55,8 @@ const game = () => {
         alert("Computer chose: " + computerSelection);
 
         alert(playRound(playerSelection, computerSelection));
+
+      
     }
    alert(gameScore());
 };
@@ -67,11 +73,4 @@ function gameScore () {
     }
 }
 
-// function validatePlayerInput(choice) {
-//     if (choices.includes(choice)) {
-//         return true;
-//     }else {
-//         return false;
-//     }
-// }
 
