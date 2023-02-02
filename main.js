@@ -1,68 +1,51 @@
-function openGame() {
-    game();
- }
+let playerScore = 0;
+let compScore = 0;
+const input = document.querySelector("#rock");
 
-//  User Choice
-const getUserChoice = () => {
-let userInput = prompt("Rock, Paper or Scissors");
+input.addEventListener("click", playRound());
 
-userInput = userInput.toLowerCase();
- 
-if  (!userInput) {
-    return;
+// function openGame() {
+//     game();
+//  }
 
-}else  if (userInput === 'rock' || userInput === 'paper' || userInput === 'scissors') {
-    return userInput;
-}else {
-    return prompt('Error, please input: Rock, Paper or Scissors');
-}
-
-};
+// Computer Choice
 
 const getComputerChoice = () => {
     const choices = ["rock", "paper", "scissors"];
 
-    let computerChoice = choices[Math.floor(Math.random() * choices.length)]
-    
-    return computerChoice;
+    return choices[Math.floor(Math.random() * choices.length)];
 };
 
-function playRound (playerSelection, computerSelection) {
-    
+function playRound(playerSelection, computerSelection) {
+    computerSelection = getComputerChoice().toLowerCase();
+    playerSelection = playerSelection.toLowerCase();
+
     if (playerSelection === computerSelection) {
-       
         return "It's a Tie! You both picked " + playerSelection;
-    }else if (playerSelection === "rock" && computerSelection === 'paper') {
-        
-        return "You Lose! Paper covers rock."
-    }else if (playerSelection === "scissors" && computerSelection === 'rock') {
-        
-        return "You Lose! Rock crushes Scissors."
-    }else if (playerSelection === "paper" && computerSelection === 'scissors') {
-        
-        return "You Lose! Scissors cuts Paper."
-    }else {
-        
-        return "You win!"
+    } else if (playerSelection === "rock" && computerSelection === "paper") {
+        return "You Lose! Paper covers rock.";
+    } else if (playerSelection === "scissors" && computerSelection === "rock") {
+        return "You Lose! Rock crushes Scissors.";
+    } else if (playerSelection === "paper" && computerSelection === "scissors") {
+        return "You Lose! Scissors cuts Paper.";
+    } else {
+        return "You win!";
     }
- }
+}
 
- const game = () => {
-    for(let i = 0; i < 5; i++) {
-        let playerSelection = getUserChoice();
+//  Play 5 rounds
 
-        const computerSelection = getComputerChoice();
+//  const game = () => {
+//     for(let i = 0; i < 5; i++) {
+//         let playerSelection = getUserChoice();
 
-        alert("You chose: " + playerSelection);
+//         const computerSelection = getComputerChoice();
 
-        alert("Computer chose: " + computerSelection);
+//         alert("You chose: " + playerSelection);
 
-        alert(playRound(playerSelection, computerSelection));
+//         alert("Computer chose: " + computerSelection);
 
-    }
-};
+//         alert(playRound(playerSelection, computerSelection));
 
-game();
-
-
-
+//     }
+// };

@@ -1,0 +1,138 @@
+@import url('https://fonts.googleapis.com/css2?family=Caveat:wght@600;700&family=Edu+VIC+WA+NT+Beginner:wght@500;600;700&display=swap');
+
+
+:root {
+    --primary-color: #000;
+    --bg-color: rgb(11, 21, 21);
+
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Caveat', sans-serif;
+    font-size: 1.5rem;
+    text-align: center;
+    background-color: var(--bg-color);
+    height: 100vh;
+    color: #fff;
+}
+
+header{
+    font-family: 'Edu VIC WA NT Beginner', sans-serif;
+    background-color: #ecf0f1;
+} 
+
+header .heading {
+    font-size: 4rem;
+    padding: 1rem 0;
+    color: #000;
+}
+
+#game-container {
+    width: 1000px;
+    max-width: 80%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    margin: 2rem auto;
+    padding: 2rem;
+}
+
+#game-container .desc{
+    font-size: 3rem;
+    margin-bottom: 4rem;
+}
+
+#game-container .score-board {
+    font-size: 2rem;
+    position: relative;
+    width: 250px;
+    margin: 1.3rem auto;
+    padding: 15px 20px;
+    text-align: center;
+}
+
+.score-card {
+    display: none;
+}
+
+.score-card .user-card {
+    position: absolute;
+    top: 50%;
+    left: -40px;
+    margin-top: -50px;
+    transform: translateY(-50%);
+}
+
+.score-card .com-card{
+    position: absolute;
+    top: 50%;
+    right: -30px;
+    margin-top: -50px;
+    transform: translateY(-50%);
+}
+
+#game-container .score-board .score-info {
+    font-size: 2rem;
+    padding: 20px 0;
+}
+
+#score {
+    position: absolute;
+    text-align: center;
+    top: 26px;
+    transform: translateX(-50%);
+    width: 100%;
+    font-size: 2.5rem;
+}
+
+.score-info .user {
+    position: absolute;
+    top: 30px;
+    left: 0;
+    transform: translateX(-50%);
+}
+
+.score-info .comp {
+    position: absolute;
+    top: 30px;
+    right: 0;
+    transform: translateX(50%);
+}
+
+#game-container .moves {
+    font-size: 1.5rem;
+    margin-bottom: 2rem;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+}
+
+#game-container .btn-container {
+    display: flex; 
+    gap: 2rem;
+}
+
+.btn-container .btn {
+    padding: 2rem;
+    border-radius: 20px;
+    background-color: transparent;
+    transition: all 0.4s ease;
+}
+
+.btn img {
+    width: 150px;
+}
+
+.btn-container .btn:hover {
+    border: 1px solid grey;
+    transform: scale(1.1);
+    cursor: pointer;
+}
